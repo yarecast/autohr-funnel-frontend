@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoHR Studio — n8n HR Automation Template</title>
+  <meta name="description" content="One ready-to-deploy n8n flow that automates onboarding, PTO, payroll alerts and offboarding. $27 one-time. Instant download." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            sage: {
+              DEFAULT: '#7C9A8A',
+              light: '#EAF0EB',
+              dark: '#4F7060',
+            },
+            linen: {
+              DEFAULT: '#FAFAF8',
+              dark: '#F2F0EA',
+              border: '#E0DDD5',
+            },
+            ink: '#1a1a1a',
+          },
+          letterSpacing: {
+            widest2: '0.18em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #FAFAF8; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="font-sans text-ink antialiased">
+
+  <nav class="flex justify-between items-center px-8 py-5 border-b border-linen-border bg-linen sticky top-0 z-50">
+    <span class="font-serif text-sm tracking-widest uppercase">AutoHR Studio</span>
+    <div class="hidden md:flex gap-8 text-xs tracking-widest uppercase text-gray-400">
+      <a href="#includes" class="hover:text-ink transition-colors">Templates</a>
+      <a href="#faq" class="hover:text-ink transition-colors">FAQ</a>
+      <a href="#buy" class="hover:text-ink transition-colors">Pricing</a>
+    </div>
+  </nav>
+
+  <section class="px-8 md:px-16 pt-20 pb-16 max-w-5xl mx-auto">
+    <p class="text-xs tracking-widest2 uppercase text-sage font-medium mb-6">n8n Automation Template · HR Edition</p>
+    <h1 class="font-serif text-5xl md:text-6xl leading-tight mb-6 max-w-2xl">
+      Automate your <em class="text-sage italic font-bold font-serif">entire</em><br/>HR team workflow.
+    </h1>
+    <p class="text-base text-gray-500 leading-relaxed max-w-xl mb-10">
+      One ready-to-deploy n8n flow that handles onboarding, payroll alerts,
+      PTO requests, and offboarding — without writing a single line of code.
+    </p>
+
+    <div class="flex items-baseline gap-3 mb-8">
+      <span class="font-serif text-5xl">$27</span>
+      <span class="text-sm text-gray-400">one-time &nbsp;·&nbsp; instant download</span>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <button
+        id="buy-btn"
+        onclick="handleCheckout()"
+        class="bg-ink text-linen px-10 py-4 text-xs tracking-widest uppercase font-medium hover:bg-gray-800 transition-colors"
+      >
+        Buy Now
+      </button>
+      <a href="#includes" class="border border-linen-border text-ink px-8 py-4 text-xs tracking-widest uppercase hover:bg-linen-dark transition-colors">
+        See what's inside
+      </a>
+    </div>
+  </section>
+
+  <div class="bg-ink px-8 py-3 overflow-hidden">
+    <div class="flex gap-10 text-xs tracking-widest uppercase whitespace-nowrap animate-none">
+      <span class="text-sage">Instant delivery</span>
+      <span class="text-gray-600">·</span>
+      <span class="text-gray-500">Works with any n8n version</span>
+      <span class="text-gray-600">·</span>
+      <span class="text-sage">Stripe secure checkout</span>
+      <span class="text-gray-600">·</span>
+      <span class="text-gray-500">No recurring fees</span>
+      <span class="text-gray-600">·</span>
+      <span class="text-sage">Email confirmation included</span>
+    </div>
+  </div>
+
+<section id="includes" class="w-full bg-cover bg-center bg-no-repeat py-20" style="background-image: url('../recursos/wallpaper.jpg');">
+    
+    <div class="px-8 md:px-16 max-w-5xl mx-auto">
+      <p class="text-xs tracking-widest uppercase text-ink font-bold mb-10">What's included</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 border border-linen-border divide-y md:divide-y-0 divide-linen-border bg-linen/50 backdrop-blur-md">
+
+        <div class="p-8 border-b md:border-b-0 md:border-r border-linen-border">
+          <div class="font-serif text-4xl text-linen-border mb-4">01</div>
+          <h3 class="text-sm font-semibold mb-2">Employee Onboarding Flow</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Auto-creates accounts, sends welcome emails, and assigns tasks
+            the moment a new hire is added to your Google Sheet.
+          </p>
+        </div>
+
+        <div class="p-8 border-b border-linen-border">
+          <div class="font-serif text-4xl text-linen-border mb-4">02</div>
+          <h3 class="text-sm font-semibold mb-2">PTO Request Automation</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Slack or email submission → manager approval → calendar block.
+            Zero manual follow-up needed.
+          </p>
+        </div>
+
+        <div class="p-8 border-b md:border-b-0 md:border-r border-linen-border">
+          <div class="font-serif text-4xl text-linen-border mb-4">03</div>
+          <h3 class="text-sm font-semibold mb-2">Payroll Deadline Alerts</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Scheduled reminders to the finance team 5 and 1 day before
+            payroll closes. Configurable per timezone.
+          </p>
+        </div>
+
+        <div class="p-8">
+          <div class="font-serif text-4xl text-linen-border mb-4">04</div>
+          <h3 class="text-sm font-semibold mb-2">Offboarding Checklist</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Triggers IT access revocation, exit survey, and equipment return
+            request automatically in one click.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-linen-dark px-8 md:px-16 py-16">
+    <div class="max-w-2xl mx-auto text-center">
+      <blockquote class="font-serif text-2xl italic leading-relaxed text-ink mb-6">
+        "We saved 6 hours a week in our People team. This template
+        replaced a part-time admin role."
+      </blockquote>
+      <p class="text-xs text-gray-400 tracking-wide">
+        <strong class="text-ink font-medium">Mariana T.</strong>
+        &nbsp;·&nbsp; HR Director, SaaS startup &nbsp;·&nbsp; 45 employees
+      </p>
+    </div>
+  </section>
+
+  <section class="px-8 md:px-16 py-20 max-w-5xl mx-auto">
+    <p class="text-xs tracking-widest uppercase text-gray-400 mb-10">How it works</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <div class="text-sage text-xs tracking-widest uppercase font-medium mb-3">Step 1</div>
+        <h4 class="text-sm font-semibold mb-2">Purchase & download</h4>
+        <p class="text-xs text-gray-400 leading-relaxed">Pay securely with Stripe. You'll receive an email with your <code class="bg-linen-dark px-1">.json</code> file within seconds.</p>
+      </div>
+      <div>
+        <div class="text-sage text-xs tracking-widest uppercase font-medium mb-3">Step 2</div>
+        <h4 class="text-sm font-semibold mb-2">Import to n8n</h4>
+        <p class="text-xs text-gray-400 leading-relaxed">Open n8n → Workflows → Import from file. Done. All nodes and connections are pre-configured.</p>
+      </div>
+      <div>
+        <div class="text-sage text-xs tracking-widest uppercase font-medium mb-3">Step 3</div>
+        <h4 class="text-sm font-semibold mb-2">Add your credentials</h4>
+        <p class="text-xs text-gray-400 leading-relaxed">Fill in your Slack token, Google account, or email SMTP. Each node has clear instructions inline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-linen-dark px-8 md:px-16 py-16 max-w-5xl mx-auto">
+    <p class="text-xs tracking-widest uppercase text-gray-400 mb-8">Frequently asked</p>
+    <div class="space-y-6 max-w-2xl">
+      <div class="border-b border-linen-border pb-6">
+        <h5 class="text-sm font-medium mb-2">Do I need a paid n8n plan?</h5>
+        <p class="text-xs text-gray-400 leading-relaxed">No. The template runs on n8n's free self-hosted version and on the free cloud tier (up to 5 active workflows).</p>
+      </div>
+      <div class="border-b border-linen-border pb-6">
+        <h5 class="text-sm font-medium mb-2">What if I need customization?</h5>
+        <p class="text-xs text-gray-400 leading-relaxed">Every node is fully editable. The template ships with inline comments explaining each step. Most teams adapt it in under an hour.</p>
+      </div>
+      <div class="pb-2">
+        <h5 class="text-sm font-medium mb-2">Is this a one-time payment?</h5>
+        <p class="text-xs text-gray-400 leading-relaxed">Yes. $27 once, yours forever. Future updates to the template are included at no extra cost.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="buy" class="px-8 md:px-16 py-24 text-center max-w-5xl mx-auto">
+    <h2 class="font-serif text-4xl mb-4">Ready to ship it today?</h2>
+    <p class="text-sm text-gray-400 mb-10 max-w-md mx-auto">
+      Download, import to n8n, fill in your credentials.
+      Done in under 20 minutes.
+    </p>
+    <button
+      onclick="handleCheckout()"
+      class="bg-ink text-linen px-12 py-4 text-xs tracking-widest uppercase font-medium hover:bg-gray-800 transition-colors mb-8"
+    >
+      Get the Template — $27
+    </button>
+    
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 text-xs text-gray-400">
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+        Secure checkout
+      </span>
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+        </svg>
+        Instant delivery
+      </span>
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7H18.5"></path>
+        </svg>
+        Lifetime updates
+      </span>
+    </div>
+  </section>
+
+  <footer class="border-t border-linen-border px-8 md:px-16 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-300">
+    <span>© 2025 AutoHR Studio</span>
+    <span>Built with n8n · Payments by Stripe · Protected by Cloudflare</span>
+  </footer>
+
+
+  <!-- ─── STRIPE INTEGRATION ─── -->
+  <!--
+    SETUP INSTRUCTIONS:
+    1. Go to https://dashboard.stripe.com/test/apikeys
+    2. Copy your "Publishable key" (starts with pk_test_...)
+    3. Replace YOUR_STRIPE_PUBLISHABLE_KEY below
+    4. Create a Price in Stripe Dashboard (Products → Add product → $27 one-time)
+    5. Copy the Price ID (starts with price_...) and set it in your backend .env
+  -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE';
+
+    async function handleCheckout() {
+      const btn = document.getElementById('buy-btn');
+      btn.textContent = 'Redirecting...';
+      btn.disabled = true;
+
+      try {
+        // Calls your FastAPI backend to create a Stripe Checkout Session
+        const res = await fetch('autohr-funnel-backend-production.up.railway.app/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (!res.ok) throw new Error('Server error');
+
+        const { url } = await res.json();
+        window.location.href = url; // Redirect to Stripe Checkout page
+
+      } catch (err) {
+        console.error(err);
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      }
+    }
+  </script>
+
+</body>
+</html>
