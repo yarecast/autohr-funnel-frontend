@@ -260,7 +260,7 @@
 
       try {
         // Calls your FastAPI backend to create a Stripe Checkout Session
-        const res = await fetch('autohr-funnel-backend-production.up.railway.app/api/create-checkout-session', {
+        const res = await fetch('https://autohr-funnel-backend-production.up.railway.app/api/create-checkout-session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
         });
